@@ -1,0 +1,290 @@
+/* --- General Body & Font --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Updated: Darker gradient background with shades of black/grey */
+    background: linear-gradient(to right bottom, #1a1a1a, #0a0a0a); 
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    color: #e0e0e0;
+    overflow-x: hidden; 
+}
+
+/* --- Header Section (Top Part of the Page) --- */
+.header-section {
+    text-align: center;
+    padding: 80px 20px 60px; 
+    max-width: 800px;
+}
+
+/* Updated: Icon for professionalism (e.g., sparkle, star) */
+.header-section .icon-professional {
+    font-size: 2.5rem;
+    color: #00bcd4; /* A techy blue for emphasis */
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.header-section h1 {
+    font-size: 3.5rem; 
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.header-section p {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.header-actions input {
+    /* Updated: Darker input background and border */
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+    width: 250px; 
+}
+
+.header-actions input::placeholder {
+    color: #777;
+}
+
+.header-actions button {
+    /* Updated: A subtle, professional blue for the button */
+    background-color: #00bcd4; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-actions button:hover {
+    background-color: #0097a7; /* Darker blue on hover */
+}
+
+
+/* --- Chat Container (The Chat Widget) --- */
+.chat-container {
+    width: 90%;
+    max-width: 850px; 
+    height: 600px; 
+    /* Updated: Darker background for the chat itself */
+    background-color: #1c1c1c; 
+    border-radius: 15px;
+    /* Updated: Stronger, darker shadow */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 40px; 
+    position: relative; 
+}
+
+/* --- Chat Header (inside the chat widget) --- */
+.chat-header {
+    /* Updated: Slightly lighter dark for header */
+    background-color: #2a2a2a; 
+    color: #f0f0f0;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    /* Updated: Darker border */
+    border-bottom: 1px solid #333333;
+}
+.chat-header .icon {
+    margin-right: 15px;
+    /* Updated: Professional blue icon background */
+    background-color: #00bcd4; 
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+/* --- Chat Box (where messages appear) --- */
+.chat-box {
+    flex-grow: 1;
+    padding: 25px;
+    overflow-y: auto;
+    /* Updated: Main chat background */
+    background-color: #1c1c1c; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+/* --- Scrollbar Styling (Webkit only) --- */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-box::-webkit-scrollbar-track {
+    background: #2a2a2a; /* Darker track */
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #444444; /* Darker thumb */
+    border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+/* --- General Message Styling --- */
+.chat-message {
+    display: flex;
+    max-width: 70%; 
+}
+
+.message-content {
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word; 
+}
+
+/* --- Bot Message Styling --- */
+.bot-message {
+    justify-content: flex-start;
+    align-self: flex-start; 
+}
+.bot-message .message-content {
+    /* Updated: Darker chat bubble for bot */
+    background-color: #2a2a2a; 
+    color: #e0e0e0;
+    border-bottom-left-radius: 5px; 
+}
+
+/* --- User Message Styling --- */
+.user-message {
+    justify-content: flex-end;
+    align-self: flex-end; 
+    margin-left: auto; 
+}
+.user-message .message-content {
+    /* Updated: Professional blue chat bubble for user */
+    background-color: #00bcd4; 
+    color: white;
+    border-bottom-right-radius: 5px; 
+}
+
+/* --- Input Area --- */
+.input-container {
+    display: flex;
+    padding: 15px 25px;
+    /* Updated: Match header dark */
+    background-color: #2a2a2a; 
+    /* Updated: Darker border */
+    border-top: 1px solid #333333;
+    align-items: center;
+}
+
+#userInput {
+    flex-grow: 1;
+    border: none;
+    /* Updated: Darker input field */
+    background-color: #1c1c1c; 
+    border-radius: 20px;
+    padding: 12px 20px;
+    color: #f0f0f0;
+    font-size: 0.95rem;
+    outline: none;
+    margin-right: 10px;
+}
+
+#userInput::placeholder {
+    color: #777;
+}
+
+#sendButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+#sendButton:active {
+    transform: scale(0.95);
+}
+
+#sendButton svg {
+    width: 24px; 
+    height: 24px;
+    /* Updated: Professional blue send icon */
+    fill: #00bcd4; 
+    transition: fill 0.2s ease;
+}
+
+#sendButton:hover svg {
+    fill: #00e5ff; /* Lighter blue on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 2.5rem;
+    }
+    .header-section p {
+        font-size: 1rem;
+    }
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-actions input {
+        width: 80%; 
+        max-width: 300px;
+    }
+    .chat-container {
+        height: 80vh; 
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    .chat-box {
+        padding: 15px;
+    }
+    .chat-header {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    .input-container {
+        padding: 10px 15px;
+    }
+    #userInput {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    #sendButton svg {
+        width: 22px;
+        height: 22px;
+    }
+}

@@ -1,0 +1,78 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "How are you?",
+        "Good day",
+        "What's up?",
+        "Is anyone there?"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there, what can I do for you?",
+        "Hey! Ask me anything."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Thanks for your help",
+        "That's all"
+      ],
+      "responses": [
+        "Goodbye! Have a great day.",
+        "See you next time!",
+        "Happy to help! Come back anytime."
+      ]
+    },
+    {
+      "tag": "shipping_info",
+      "patterns": [
+        "How long does shipping take?",
+        "What are the shipping times?",
+        "When will my order arrive?",
+        "Delivery options",
+        "How much is delivery?",
+        "Tell me about shipping"
+      ],
+      "responses": [
+        "Standard shipping usually takes 5-7 business days. Express shipping takes 2-3 business days.",
+        "Shipping costs are calculated at checkout based on your location. Standard shipping is free for orders over ₹2000."
+      ]
+    },
+    {
+      "tag": "returns",
+      "patterns": [
+        "I need to return an item",
+        "What is your return policy?",
+        "How do I make a return?",
+        "Can I return my order?",
+        "Process for returning something",
+        "The product is broken, I want to send it back"
+      ],
+      "responses": [
+        "You can return any item within 30 days of purchase. Please visit our returns page at example.com/returns to start the process.",
+        "Our return policy allows for returns within 30 days. You can find all the details and initiate a return here: example.com/returns."
+      ]
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": [
+        "What payment methods do you accept?",
+        "Can I pay with UPI?",
+        "Do you take credit cards?",
+        "Payment options available"
+      ],
+      "responses": [
+        "We accept Visa, MasterCard, American Express, Net Banking, and all major UPI platforms like Google Pay, PhonePe, and Paytm."
+      ]
+    }
+  ]
+}

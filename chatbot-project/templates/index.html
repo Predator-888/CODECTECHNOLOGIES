@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal AI Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header-section">
+        <span class="icon-professional">✨</span>>
+        <h1>Your Personal AI Advisor</h1>
+        <p>These are just a few of the many attractions Paris has to offer. Let me know if you'd like more information or details on anything specific?</p>
+        <div class="header-actions">
+            <input type="email" placeholder="Email Address">
+            <button>Join Beta</button>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <span class="icon">🤖</span> AI Assistant
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-message bot-message">
+                <div class="message-content">Hello! How can I assist you today?</div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeydown="handleKey(event)">
+            <button id="sendButton">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', sendMessage);
+        
+        function handleKey(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const messageText = userInput.value.trim();
+            if (messageText === '') return;
+
+            addMessage(messageText, 'user-message');
+            userInput.value = '';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: messageText }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const botResponse = data.response;
+
+                addMessage(botResponse, 'bot-message');
+            } catch (error) {
+                console.error('Fetch error:', error);
+                addMessage('Sorry, something went wrong. Please try again.', 'bot-message');
+            }
+        }
+
+        function addMessage(text, className) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${className}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = text;
+            
+            messageDiv.appendChild(contentDiv);
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
